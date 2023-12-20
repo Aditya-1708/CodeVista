@@ -1,1 +1,1 @@
-api folder is the backend server<br>client is the frontend react server
+api folder is the backend server(nodejs)<br>client is the frontend react server(react-app)
