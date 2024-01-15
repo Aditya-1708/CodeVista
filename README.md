@@ -1,4 +1,4 @@
-![FirstPage](https://github.com/Aditya-1708/CodeVista/assets/122715316/5d58c85f-b84b-41cd-9c04-879177c933f1)
+https://github.com/Aditya-1708/CodeVista/assets/122715316/b4c71e81-d776-4f36-b86a-81a891c724e7
 ![signin](https://github.com/Aditya-1708/CodeVista/assets/122715316/5b5016d4-8859-4467-82c8-89240dbd286d)
 ![signup](https://github.com/Aditya-1708/CodeVista/assets/122715316/a55f4c59-081b-46c9-aeab-f2864040194c)
 ![Home](https://github.com/Aditya-1708/CodeVista/assets/122715316/5d9cd6ba-a62d-4aae-87ae-22ea186d4388)
@@ -10,5 +10,4 @@
 ![java](https://github.com/Aditya-1708/CodeVista/assets/122715316/a7ab8aed-802e-431c-ba8f-13b19d55acbb)
 ![python](https://github.com/Aditya-1708/CodeVista/assets/122715316/2439f92d-e1ae-46b1-b014-695c61b1c5cb)
 
-https://github.com/Aditya-1708/CodeVista/assets/122715316/b4c71e81-d776-4f36-b86a-81a891c724e7
 
