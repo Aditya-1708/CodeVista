@@ -33,6 +33,8 @@ import cppVerify from './verificationService/cppVerify.js';
 
 import askAI from './AIservice/askAI.js';
 
+import { mongodbsrv } from './env.js';
+
 app.use(bodyParser.json());
 
 app.use(cookieParser());
@@ -46,7 +48,7 @@ app.use(cors(({
 const secretKey="CodeVista.js"
 
 
-const uri='mongodb://localhost:27017';
+const uri=mongodbsrv;
 
 var hackthonsarray=[];
 
