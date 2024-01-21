@@ -1,5 +1,5 @@
 import OpenAI from "openai"
-import { openAIapikey } from "../env";
+import { openAIapikey } from "../env.js";
 async function askAI(error){
     const openai=new OpenAI({apiKey: openAIapikey});
     const chatCompletion = await openai.chat.completions.create({

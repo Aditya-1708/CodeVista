@@ -50,18 +50,10 @@ app.use(cors(({
     credentials: true,
 })));
 
-const apiKey = process.env.API_KEY;
-const databaseUrl = process.env.DATABASE_URL;
-const debugMode = process.env.DEBUG === 'true';
-
 const secretKey="CodeVista.js"
-
-<<<<<<< HEAD
 
 const uri=mongodbsrv;
 
-=======
->>>>>>> 730b46ebf3c1cc2e3f6dcfcf67b7d1bd7fd9f622
 var hackthonsarray=[];
 
 var newsarray=[];
@@ -254,7 +246,7 @@ app.post("/admins/logout",async (req,res)=>{
             if (!details.Title || !details.Description || !details.RegistrationLink) {
             return res.status(400).json({ message: 'Missing required fields' });
             }            
-            const EndDate = new Date('05 October 2011 14:48 UTC');
+            const EndDate = new Date('05 October 2011 14:48 UTC');//should update
             const obj = {
                 "Title": details.Title,
                 "Description": details.Description,
@@ -442,7 +434,7 @@ app.post("/users/attend",authenticateJWT,upload.fields([{ name: 'code' }, { name
 app.post("/users/askAI", authenticateJWT,upload.fields([{name:'prompt'}]), async (req, res) => {
     try {
         const prompt = req.body['prompt'];
-        const response = await askAI(apiKey,prompt);
+        const response = await askAI(prompt);
         if (response) {
             res.status(200).json({ response: response.content, message: 'Success' });
         }
