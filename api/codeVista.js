@@ -62,7 +62,7 @@ var researcharray=[];
 
 mongoose.set('strictQuery', true);
 
-mongoose.connect(databaseUrl);
+mongoose.connect(uri);
 
 const adminSchema=new mongoose.Schema({
     Username: String,
