@@ -7,17 +7,21 @@ const upload=multer();
 
 import bcrypt from 'bcrypt';
 
+import path from 'path';
+
 const salt=bcrypt.genSaltSync(10);
 
 import cookieParser from 'cookie-parser';
 
-import express from 'express';
+import express, { urlencoded } from 'express';
 
 import jwt from 'jsonwebtoken';
 
 import { mongoose } from 'mongoose';
 
 const app=express();
+
+import dotenv from 'dotenv';
 
 import bodyParser from 'body-parser';
 
@@ -39,17 +43,25 @@ app.use(bodyParser.json());
 
 app.use(cookieParser());
 
+dotenv.config();
+
 app.use(cors(({
     origin: 'http://localhost:3000',
     credentials: true,
-  })));
+})));
 
+const apiKey = process.env.API_KEY;
+const databaseUrl = process.env.DATABASE_URL;
+const debugMode = process.env.DEBUG === 'true';
 
 const secretKey="CodeVista.js"
 
+<<<<<<< HEAD
 
 const uri=mongodbsrv;
 
+=======
+>>>>>>> 730b46ebf3c1cc2e3f6dcfcf67b7d1bd7fd9f622
 var hackthonsarray=[];
 
 var newsarray=[];
@@ -58,7 +70,7 @@ var researcharray=[];
 
 mongoose.set('strictQuery', true);
 
-mongoose.connect(uri);
+mongoose.connect(databaseUrl);
 
 const adminSchema=new mongoose.Schema({
     Username: String,
@@ -113,6 +125,15 @@ async function getAllHackthonElements() {
       console.error(err);
     }
 }
+const __filename = new URL(import.meta.url).pathname;
+
+const __dirname = path.dirname(__filename);
+
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 async function getAllNewsElements() {
     try {
@@ -421,7 +442,7 @@ app.post("/users/attend",authenticateJWT,upload.fields([{ name: 'code' }, { name
 app.post("/users/askAI", authenticateJWT,upload.fields([{name:'prompt'}]), async (req, res) => {
     try {
         const prompt = req.body['prompt'];
-        const response = await askAI(prompt);
+        const response = await askAI(apiKey,prompt);
         if (response) {
             res.status(200).json({ response: response.content, message: 'Success' });
         }
