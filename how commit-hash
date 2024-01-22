@@ -1,0 +1,121 @@
+[33mcommit af5973c4cfcfcede4bb1a62251d56bdbe2bbcc56[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Aditya-1708 <umeshaditya72@gmail.com>
+Date:   Mon Jan 22 13:40:26 2024 +0530
+
+    debugged
+
+[33mcommit 86bcbd24700686a90654365d6128b68712878c70[m
+Author: Aditya-1708 <umeshaditya72@gmail.com>
+Date:   Sun Jan 21 22:36:12 2024 +0530
+
+    deploy
+
+[33mcommit 89666bf5bea189510188094a1bdde26eb99cc727[m
+Author: Aditya-1708 <umeshaditya72@gmail.com>
+Date:   Sun Jan 21 21:21:46 2024 +0530
+
+    deployable
+
+[33mcommit 8b23ee4016fb7ae8fb5abd2e4d35a3f943d1933e[m
+Merge: ffe52ac 730b46e
+Author: Aditya-1708 <umeshaditya72@gmail.com>
+Date:   Sun Jan 21 20:03:27 2024 +0530
+
+    Merge branch 'main' of https://github.com/Aditya-1708/CodeVista into HEAD
+
+[33mcommit ffe52acf1ada1eacbef0349f3183bf7ae0a0c2ff[m
+Author: Aditya-1708 <umeshaditya72@gmail.com>
+Date:   Sun Jan 21 20:01:52 2024 +0530
+
+    deployable
+
+[33mcommit 730b46ebf3c1cc2e3f6dcfcf67b7d1bd7fd9f622[m
+Author: Aditya-1708 <122715316+Aditya-1708@users.noreply.github.com>
+Date:   Mon Jan 15 13:01:17 2024 +0530
+
+    Update README.md
+
+[33mcommit dd63749e81711ccca0eb642d70774fd820cf5e09[m
+Author: Aditya-1708 <122715316+Aditya-1708@users.noreply.github.com>
+Date:   Mon Jan 15 12:55:15 2024 +0530
+
+    Update README.md
+
+[33mcommit 8ddb6d2339538c8cf6701cb6f18a309f0b40a402[m
+Author: Aditya-1708 <122715316+Aditya-1708@users.noreply.github.com>
+Date:   Mon Jan 15 12:54:41 2024 +0530
+
+    Update README.md
+
+[33mcommit 46050e4c65475edfd71d0066f792a0199083e01a[m
+Author: Aditya-1708 <122715316+Aditya-1708@users.noreply.github.com>
+Date:   Mon Jan 15 12:52:52 2024 +0530
+
+    Update README.md
+
+[33mcommit 6ed4c13c7e5f4689c14d51ddf1929872eb31888a[m
+Author: unknown <Aditya-1708>
+Date:   Sat Jan 6 21:13:14 2024 +0530
+
+    new updates
+
+[33mcommit 9d89b2dcf96f8bc161581f72a02262a7c6bf84a2[m
+Author: unknown <Aditya-1708>
+Date:   Sat Jan 6 20:46:51 2024 +0530
+
+    changes
+
+[33mcommit 9c94053095c22c312f1662affbb9de862a3bb88f[m
+Author: unknown <Aditya-1708>
+Date:   Sat Jan 6 20:45:07 2024 +0530
+
+    changes
+
+[33mcommit 7ea5ed790eea10413f25d23e2b3cc90ee2457641[m
+Merge: 630add9 68809dc
+Author: unknown <Aditya-1708>
+Date:   Wed Dec 20 22:42:22 2023 +0530
+
+    Merge branch 'main' of https://github.com/Aditya-1708/CodeVista
+
+[33mcommit 630add91f457a5dc84fd2df2d874a8d6886c2e25[m
+Author: unknown <Aditya-1708>
+Date:   Wed Dec 20 22:42:00 2023 +0530
+
+    fourth commit
+
+[33mcommit 68809dcd05ec93c009e7348acfa2e6a9a72cfdba[m
+Author: Aditya-1708 <122715316+Aditya-1708@users.noreply.github.com>
+Date:   Wed Dec 20 22:38:56 2023 +0530
+
+    Update README.md
+
+[33mcommit 1a15426c663b4927e88c5afa4b9858e25dc38395[m
+Author: Aditya-1708 <122715316+Aditya-1708@users.noreply.github.com>
+Date:   Wed Dec 20 22:38:11 2023 +0530
+
+    Update README.md
+
+[33mcommit 96230e7e03b15b6a87d8711069150652f2ec7a2f[m
+Author: Aditya-1708 <122715316+Aditya-1708@users.noreply.github.com>
+Date:   Wed Dec 20 22:37:30 2023 +0530
+
+    Update README.md
+
+[33mcommit f1f215fa0ee6c446da710637f37566994263a834[m
+Author: unknown <Aditya-1708>
+Date:   Wed Dec 20 22:30:34 2023 +0530
+
+    third commit
+
+[33mcommit 675db0e32a08ac7bac54ad86d39ea33dc2f1eac4[m
+Author: unknown <Aditya-1708>
+Date:   Wed Dec 20 22:29:20 2023 +0530
+
+    second commit
+
+[33mcommit 15d3c9a216624ba36795d62c13f6b8002a3fc0d9[m
+Author: unknown <Aditya-1708>
+Date:   Wed Dec 20 22:28:33 2023 +0530
+
+    first commit
