@@ -21,7 +21,14 @@ Additionally, the platform provides an array of dynamic features,
 including curated blogs that keep users informed about the latest
 hackathons, news, and research papers.
 
-# CodeVista Setup Instructions
+## Tech Stack
+
+**Client:**  Html ,CSS , React with JS , SwiperJs
+
+**Server:**  NodeJs , ExpressJs, MongoDB
+
+
+## CodeVista Setup Instructions
 These instructions guide you through the process of setting up the CodeVista project on your local machine.
 ## Clone the Repository
 ```bash
