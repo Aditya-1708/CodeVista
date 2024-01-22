@@ -99,3 +99,6 @@ https://github.com/Aditya-1708/CodeVista/assets/122715316/34eeb421-c69e-4b64-9ba
 
 ## Contributing
 We welcome contributions from the community to make our project even better! Whether you're a developer, designer, tester, or simply an enthusiast, your input is valuable. If you have ideas for new features, improvements, bug fixes, or documentation enhancements, feel free to contribute. Fork the repository, make your changes, and submit a pull request. We appreciate your efforts in helping us create a collaborative and thriving open-source project. Together, we can make a positive impact and build something amazing. Thank you for considering contributing to our project!
+## Feedback
+Feel free to give your feedback and suggestions
+https://docs.google.com/forms/d/e/1FAIpQLScG2pNTwOcJ8RUk3TJFK8EwxN52Cj-ArL2IBaUDuB34GEWlGg/viewform?usp=sf_link
