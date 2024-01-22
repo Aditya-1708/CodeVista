@@ -1,4 +1,2 @@
-module.exports={
-    mongodbsrv:"",//enter you server link
-    openAIapikey:""//create you key and paste it here
-}
+export const mongodbsrv="";//enter you server link
+export const openAIapikey=""//create you key and paste it here
