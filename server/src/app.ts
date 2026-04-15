@@ -1,16 +1,34 @@
 import express from "express";
 import dotenv from "dotenv";
-import passport from "passport";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+
 import authRoutes from "./routes/authRoutes";
 import execRouter from "./routes/executionRoutes";
+import aiRouter from "./routes/aiRoutes";
+import codeBookRouter from "./routes/codeBookRoutes";
 
 dotenv.config();
+
 const app = express();
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
+
 app.use(express.json());
-app.use(passport.initialize());
+app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/exec", execRouter);
+app.use("/api/ai", aiRouter);
+app.use("/api/codeBook", codeBookRouter);
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
+app.listen(PORT, () =>
+  console.log(`🚀 Server running on port ${PORT}`)
+);

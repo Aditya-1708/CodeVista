@@ -1,0 +1,45 @@
+x-runner-template: &runner-template
+  command: sh -c "mkdir -p /workspace && tail -f /dev/null"
+  mem_limit: 256m
+  cpus: 0.5
+
+  # Security Hardening
+  network_mode: "none"
+  pids_limit: 50
+
+  cap_drop:
+    - ALL
+
+  security_opt:
+    - no-new-privileges:true
+
+  tmpfs:
+    - /tmp
+
+  restart: unless-stopped
+
+services:
+  java1:
+    <<: *runner-template
+    image: eclipse-temurin:17
+    container_name: java1
+
+  py1:
+    <<: *runner-template
+    image: python:3.11
+    container_name: py1
+
+  cpp1:
+    <<: *runner-template
+    image: gcc
+    container_name: cpp1
+
+  c1:
+    <<: *runner-template
+    image: gcc
+    container_name: c1
+
+  js1:
+    <<: *runner-template
+    image: node:20
+    container_name: js1

@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "clear&&nodemon --exec ts-node src/app.ts"
+    "dev": "clear && nodemon --exec ts-node src/app.ts",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "start:all": "npm run docker:up && npm run dev"
   },
   "keywords": [],
   "author": "",
@@ -12,24 +15,31 @@
   "type": "commonjs",
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^24.8.1",
+    "@types/node": "^24.12.2",
     "@types/passport": "^1.0.17",
     "@types/passport-google-oauth20": "^2.0.16",
     "nodemon": "^3.1.10",
-    "prisma": "^6.17.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@prisma/client": "^6.17.1",
+    "@google/genai": "^1.50.0",
+    "@prisma/client": "^6.19.3",
     "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "fs": "^0.0.1-security",
+    "install": "^0.13.0",
     "jsonwebtoken": "^9.0.2",
+    "npm": "^11.12.1",
     "passport": "^0.7.0",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "prisma": "^6.19.3"
   }
 }

@@ -1,30 +1,35 @@
-import { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../api/axiosInstance";
-import { useAuth } from "../context/AuthContext";
 
-export const LoginPage = () => {
+export const SignupPage = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-
-  const { verifyUser, isAuthenticated } = useAuth();
-
-  const from =
-    location.state?.from?.pathname || "/dashboard";
 
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
   });
 
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] =
-    useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // If already logged in, redirect
-  if (isAuthenticated) {
-    navigate("/dashboard", { replace: true });
-  }
+  // Verify if already logged in
+  useEffect(() => {
+    const verifyUser = async () => {
+      try {
+        const res = await axiosInstance.get("/auth/verify");
+
+        if (res.data.valid) {
+          navigate("/dashboard");
+        }
+      } catch {
+        // Not logged in → stay on signup page
+      }
+    };
+
+    verifyUser();
+  }, [navigate]);
 
   const handleSubmit = async (
     e: React.FormEvent<HTMLFormElement>
@@ -35,20 +40,15 @@ export const LoginPage = () => {
       setIsLoading(true);
       setError("");
 
-      await axiosInstance.post(
-        "/auth/login",
-        formData
-      );
+      await axiosInstance.post("/auth/signup", formData);
 
-      await verifyUser();
-
-      navigate(from, { replace: true });
+      navigate("/dashboard");
 
     } catch (err: any) {
       setError(
         err?.response?.data?.message ||
-          err?.response?.data?.error ||
-          "Failed to login."
+        err?.response?.data?.error ||
+        "Signup failed. Please try again."
       );
 
     } finally {
@@ -69,16 +69,16 @@ export const LoginPage = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-950 px-4">
       <div className="w-full max-w-md bg-gray-900 p-8 rounded-xl border border-gray-800 shadow-xl">
         <h2 className="text-3xl font-bold text-center text-white">
-          Welcome Back
+          Create Account
         </h2>
 
         <p className="text-gray-400 text-center mt-2">
-          Or{" "}
+          Already have an account?{" "}
           <Link
-            to="/signup"
+            to="/login"
             className="text-indigo-400 hover:text-indigo-300"
           >
-            Create a new account
+            Login
           </Link>
         </p>
 
@@ -93,9 +93,19 @@ export const LoginPage = () => {
           className="mt-6 space-y-4"
         >
           <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full p-3 rounded bg-gray-800 text-white border border-gray-700"
+          />
+
+          <input
             type="email"
             name="email"
-            placeholder="Email Address"
+            placeholder="Email"
             value={formData.email}
             onChange={handleChange}
             required
@@ -115,11 +125,9 @@ export const LoginPage = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded font-semibold disabled:opacity-50"
+            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded font-semibold"
           >
-            {isLoading
-              ? "Signing In..."
-              : "Sign In"}
+            {isLoading ? "Signing Up..." : "Sign Up"}
           </button>
         </form>
       </div>

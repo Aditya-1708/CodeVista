@@ -14,39 +14,38 @@ datasource db {
 }
 
 model User {
-  id         Int          @id @default(autoincrement())
-  name       String?
-  email      String       @unique
-  password   String?
-  googleid   String?      @unique
-  createdAt  DateTime     @default(now())
-  Submission Submission[]
-  Problem    Problem[]
-}
-
-model Problem {
-  id           Int          @id @default(autoincrement())
-  ownerid      Int
-  statement    String
-  descriptions String
-  inputs       String[]
-  returns      String
-  testcases    String[]
-  startsWith   String
-  endsWith     String
-  Submission   Submission[]
-  user      User         @relation(fields: [ownerid], references: [id])
-}
-
-model Submission {
   id        Int      @id @default(autoincrement())
-  userId    Int
-  problemId Int
-  code      String
-  language  String
+  name      String?
+  email     String   @unique
+  password  String?
   createdAt DateTime @default(now())
-  accepted  Boolean  @default(false)
+  codeBooks CodeBook[]
+}
 
-  user    User    @relation(fields: [userId], references: [id])
-  problem Problem @relation(fields: [problemId], references: [id])
+enum Language {
+  JAVA
+  JAVASCRIPT
+  PYTHON
+  C
+  CPP
+  SQL
+}
+
+model CodeBook {
+  id        Int      @id @default(autoincrement())
+
+  name      String   @default("Untitled Book")
+
+  code      String   @db.Text
+
+  stdout    String?  @db.Text
+  stderr    String?  @db.Text
+
+  language  Language
+
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
