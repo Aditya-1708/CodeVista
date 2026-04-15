@@ -92,12 +92,6 @@ export const codeExecutor = async (
         throw new Error("Unsupported language");
     }
 
-    await execFileAsync("docker", [
-      "cp",
-      filepath,
-      `${runner.name}:/workspace/${filename}.${language}`,
-    ]);
-
     // 3. Execute inside container with strict timeout
     const { stdout, stderr } = await execFileAsync("docker", execArgs, {
       timeout: EXECUTION_TIMEOUT_MS,

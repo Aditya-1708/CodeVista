@@ -11,7 +11,6 @@ const languageMap: Record<string, string> = {
   PYTHON: "py",
   C: "c",
   CPP: "cpp",
-  SQL: "sql",
 };
 
 execRouter.post("/executeCode", protect, async (req, res) => {
@@ -40,48 +39,36 @@ execRouter.post("/executeCode", protect, async (req, res) => {
         error: "Unsupported language",
       });
     }
-const result = await codeExecutor(
-  executorLanguage,
-  codeBook.code,
-  username
-);
 
-await prisma.codeBook.update({
-  where: {
-    id: parseInt(codeBookId),
-  },
-  data: {
-    stdout:
-      "error" in result
-        ? ""
-        : result.stdout,
+    const result = await codeExecutor(
+      executorLanguage,
+      codeBook.code,
+      username,
+    );
 
-    stderr:
-      "error" in result
-        ? String(result.error)
-        : result.stderr,
-  },
-});
+    await prisma.codeBook.update({
+      where: {
+        id: parseInt(codeBookId),
+      },
+      data: {
+        stdout: "error" in result ? "" : result.stdout,
 
-return res.status(200).json({
-  stdout:
-    "error" in result
-      ? ""
-      : result.stdout,
+        stderr: "error" in result ? String(result.error) : result.stderr,
+      },
+    });
 
-  stderr:
-    "error" in result
-      ? String(result.error)
-      : result.stderr,
-});
+    return res.status(200).json({
+      stdout: "error" in result ? "" : result.stdout,
 
-} catch (err: any) {
-  console.error(err);
+      stderr: "error" in result ? String(result.error) : result.stderr,
+    });
+  } catch (err: any) {
+    console.error(err);
 
-  return res.status(400).json({
-    error: err.message,
-  });
-}
+    return res.status(400).json({
+      error: err.message,
+    });
+  }
 });
 
 export default execRouter;
